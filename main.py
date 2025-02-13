@@ -9,13 +9,13 @@ import pygame
 from gtts import gTTS
 
 # Configure Gemini AI
-genai.configure(api_key="AIzaSyCvGIIAJAW43kdC2x0EUAU_6q9tFmNSxdw")
+genai.configure(api_key="gemini api")
 model = genai.GenerativeModel("gemini-pro")
 
 # Initialize recognizer and engine
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
-newsapi = "dcf7efab62494845b32e5cdcf5dba535"
+newsapi = "news api"
 
 def speak(text):
     tts = gTTS(text)
@@ -35,7 +35,7 @@ def ai_process(command):
     return response.text.strip() if response.text else "Sorry, I couldn't understand that."
 
 def get_news():
-    url = f"https://newsapi.org/v2/top-headlines?country=us&apiKey=dcf7efab62494845b32e5cdcf5dba535"
+    url = f"news api url"
     try:
         data = requests.get(url).json()
         articles = data.get("articles", [])
